@@ -16,11 +16,6 @@
  -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
-        <catalog>
-            <search>
-                <engine>elasticsuite</engine>
-            </search>
-        </catalog>
         <smile_elasticsuite_autocomplete_settings>
             <product_autocomplete>
                 <max_size>5</max_size>
