@@ -104,7 +104,10 @@ class InstallData implements InstallDataInterface
         $this->updateCategoryIsAnchorAttribute();
         $this->updateDefaultValuesForNameAttributes();
 
-        $this->getIndexer('elasticsuite_categories_fulltext')->reindexAll();
+        /**
+         * We do not want to reindex during installation !!!
+         */
+        //$this->getIndexer('elasticsuite_categories_fulltext')->reindexAll();
 
         $setup->endSetup();
     }

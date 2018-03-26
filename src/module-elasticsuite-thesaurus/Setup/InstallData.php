@@ -54,7 +54,10 @@ class InstallData implements InstallDataInterface
      */
     public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
     {
-        $this->getIndexer('elasticsuite_thesaurus')->reindexAll();
+        /**
+         * We do not want to reindex during installation !!!
+         */
+        //$this->getIndexer('elasticsuite_thesaurus')->reindexAll();
     }
 
     /**
