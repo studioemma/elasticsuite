@@ -227,23 +227,14 @@ class Attribute extends \Magento\CatalogSearch\Model\Layer\Filter\Attribute impl
     }
 
     /**
-     * Current facet size.
+     * Current facet size - always return 0, making sure all facets and aggregations are requested
+     * from ES each time.
      *
      * @return integer
      */
     private function getFacetSize()
     {
-        $attribute = $this->getAttributeModel();
-        $size      = (int) $attribute->getFacetMaxSize();
-
-        $hasValue      = !empty($this->currentFilterValue);
-        $isManualOrder = $attribute->getFacetSortOrder() == BucketInterface::SORT_ORDER_MANUAL;
-
-        if ($hasValue || $isManualOrder) {
-            $size = 0;
-        }
-
-        return $size;
+        return 0;
     }
 
     /**
